@@ -52,7 +52,7 @@ To dynamically and quickly create a team HTML page, Inquirer NPM was utilized to
 ## Deployed
 
 - [Demo Video](https://drive.google.com/file/d/1WW6ZtD5vbLFL9PxHi3XBOQ2PtcrLupt-/view)
-
+- [Sample HTML file](https://user-images.githubusercontent.com/101135703/165186084-e3e65466-01fc-433e-891b-ba45d76aa7d0.png)
 - [GitHub Repository](https://github.com/Jeff-T-Schmidt/team-profile-gen)
 
 ### Screenshot of Inquirer Questions Code
