@@ -4,7 +4,7 @@ const Manager = require("./lib/manager");
 const Engineer = require("./lib/engineer");
 const Intern = require("./lib/intern");
 const fs = require("fs");
-// const generateHtml = require("./util/generateHtml"); Completely breaks my code...why?
+const generateTeam = require("./util/generateHtml"); 
 // console.log(generateHtml)
 
 // const managers = [];
@@ -20,16 +20,13 @@ generateTeam1 = () => {
                 type: "list",
                 message: "Who do you want to create?",
                 name: "selection",
-                choices: ["Add new Manager", "Add new Employee", "Add new Engineer", "Add new Intern", "Finish"]
+                choices: ["Add new Manager","Add new Engineer", "Add new Intern", "Finish"]
             },
 
         ]).then(ans => {
             switch (ans.selection) {
                 case "Add new Manager":
                     generateManager1()
-                    break;
-                case "Add new Employee":
-                    generateEmployee1()
                     break;
                 case "Add new Engineer":
                     generateEngineer1()
@@ -40,6 +37,7 @@ generateTeam1 = () => {
 
                 default:
                     console.log("Bye!")
+                    fs.writeFileSync("./dist/index.html", generateTeam(team))
                     break;
             }
         })
@@ -74,32 +72,6 @@ generateTeam1 = () => {
             // console.log(newManager)
             ask()
 
-        })
-    }
-    const generateEmployee1 = () => {
-        inquirer.prompt([
-            {
-                type: "input",
-                name: "employeeName",
-                message: "What is your name?",
-            },
-            {
-                type: "input",
-                name: "employeeId",
-                message: "What is your Id?",
-            },
-            {
-                type: "input",
-                name: "employeeEmail",
-                message: "What is your Email?",
-            },
-
-
-        ]).then(ans => {
-            const newEmployee = new Employee(ans.employeeName, ans.employeeId, ans.employeeEmail,)
-            team.push(newEmployee)
-            console.log(team)
-            ask()
         })
     }
     const generateEngineer1 = () => {
