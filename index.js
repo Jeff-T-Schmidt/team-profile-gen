@@ -5,12 +5,7 @@ const Engineer = require("./lib/engineer");
 const Intern = require("./lib/intern");
 const fs = require("fs");
 const generateTeam = require("./util/generateHtml"); 
-// console.log(generateHtml)
 
-// const managers = [];
-// const employees = [];
-// const engineers = [];
-// const interns = [];
 const team = [];
 
 generateTeam1 = () => {
